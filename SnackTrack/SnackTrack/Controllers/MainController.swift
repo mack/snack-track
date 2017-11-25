@@ -8,57 +8,51 @@
 
 import UIKit
 
-class MainController: UICollectionViewController {
+class MainController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var camera: Camera?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.collectionView?.backgroundColor = UIColor.red
         self.collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellView")
-//        camera = Camera(frame: self.view.bounds)
-//        self.view.addSubview(camera!)
+        self.collectionView?.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         
         navigationItem.title = "Camera"
-//        [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
-//            forBarMetrics:UIBarMetricsDefault];
-//        self.navigationController.navigationBar.shadowImage = [UIImage new];
-//        self.navigationController.navigationBar.translucent = YES;
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.backgroundColor = UIColor.clear
+        
+        setupCollectionView()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    private func setupCollectionView() {
+        if let layout = self.collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.scrollDirection = .horizontal
+            layout.minimumLineSpacing = 0
+        }
+        self.collectionView?.isPagingEnabled = true
+        self.collectionView?.contentInset = UIEdgeInsetsMake(-65, 0, 0, 0)
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellView", for: indexPath)
-        print(123)
-        cell.backgroundColor = UIColor.red
+        if (indexPath.row == 0) {
+            camera = Camera(frame: cell.bounds)
+            cell.addSubview(camera!)
+        }
+        cell.backgroundColor = UIColor.blue
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print(3)
-        return 10
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 50, height: 50)
+        return CGSize(width: self.view.frame.width, height: self.view.frame.height)
     }
-    
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    
-    
-    
-    
-    //self.view - gives
-    
 }
 
