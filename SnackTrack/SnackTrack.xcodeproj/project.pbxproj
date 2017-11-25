@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		01A83FC81FC9D67800E85060 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A83FC71FC9D67800E85060 /* AppDelegate.swift */; };
-		01A83FCA1FC9D67800E85060 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A83FC91FC9D67800E85060 /* CameraController.swift */; };
+		01A83FCA1FC9D67800E85060 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A83FC91FC9D67800E85060 /* MainController.swift */; };
 		01A83FD01FC9D67800E85060 /* SnackTrack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 01A83FCE1FC9D67800E85060 /* SnackTrack.xcdatamodeld */; };
 		01A83FD21FC9D67800E85060 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01A83FD11FC9D67800E85060 /* Assets.xcassets */; };
 		01A83FD51FC9D67800E85060 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01A83FD31FC9D67800E85060 /* LaunchScreen.storyboard */; };
@@ -20,7 +20,7 @@
 /* Begin PBXFileReference section */
 		01A83FC41FC9D67800E85060 /* SnackTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnackTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01A83FC71FC9D67800E85060 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		01A83FC91FC9D67800E85060 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		01A83FC91FC9D67800E85060 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		01A83FCF1FC9D67800E85060 /* SnackTrack.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SnackTrack.xcdatamodel; sourceTree = "<group>"; };
 		01A83FD11FC9D67800E85060 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01A83FD41FC9D67800E85060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 		01A83FDD1FC9D6C700E85060 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				01A83FC91FC9D67800E85060 /* CameraController.swift */,
+				01A83FC91FC9D67800E85060 /* MainController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -187,7 +187,7 @@
 				01A83FEA1FC9D7E300E85060 /* MLManager.swift in Sources */,
 				01A83FEC1FC9D7FD00E85060 /* Extensions.swift in Sources */,
 				01A83FE81FC9D7C600E85060 /* Camera.swift in Sources */,
-				01A83FCA1FC9D67800E85060 /* CameraController.swift in Sources */,
+				01A83FCA1FC9D67800E85060 /* MainController.swift in Sources */,
 				01A83FD01FC9D67800E85060 /* SnackTrack.xcdatamodeld in Sources */,
 				01A83FC81FC9D67800E85060 /* AppDelegate.swift in Sources */,
 			);

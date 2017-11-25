@@ -35,6 +35,7 @@ class Camera: UIView {
     lazy var popupLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.textAlignment = .center
+        label.textColor = UIColor.white
         label.text = "Test"
         return label
     }()
