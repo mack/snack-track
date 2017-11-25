@@ -12,9 +12,9 @@
 		01A83FD01FC9D67800E85060 /* SnackTrack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 01A83FCE1FC9D67800E85060 /* SnackTrack.xcdatamodeld */; };
 		01A83FD21FC9D67800E85060 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01A83FD11FC9D67800E85060 /* Assets.xcassets */; };
 		01A83FD51FC9D67800E85060 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01A83FD31FC9D67800E85060 /* LaunchScreen.storyboard */; };
-		01A83FE21FC9D6E500E85060 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A83FE11FC9D6E500E85060 /* Extensions.swift */; };
-		01A83FE41FC9D6F200E85060 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A83FE31FC9D6F200E85060 /* Camera.swift */; };
-		01A83FE61FC9D6FD00E85060 /* MLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A83FE51FC9D6FC00E85060 /* MLManager.swift */; };
+		01A83FE81FC9D7C600E85060 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A83FE71FC9D7C600E85060 /* Camera.swift */; };
+		01A83FEA1FC9D7E300E85060 /* MLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A83FE91FC9D7E300E85060 /* MLManager.swift */; };
+		01A83FEC1FC9D7FD00E85060 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A83FEB1FC9D7FD00E85060 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,9 +25,9 @@
 		01A83FD11FC9D67800E85060 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01A83FD41FC9D67800E85060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01A83FD61FC9D67800E85060 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		01A83FE11FC9D6E500E85060 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = ../../../../DalHackathon2017/DalHackathon2017/Support/Extensions/Extensions.swift; sourceTree = "<group>"; };
-		01A83FE31FC9D6F200E85060 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Camera.swift; path = ../../../DalHackathon2017/DalHackathon2017/Views/Camera.swift; sourceTree = "<group>"; };
-		01A83FE51FC9D6FC00E85060 /* MLManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MLManager.swift; path = ../../DalHackathon2017/DalHackathon2017/Managers/MLManager.swift; sourceTree = "<group>"; };
+		01A83FE71FC9D7C600E85060 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		01A83FE91FC9D7E300E85060 /* MLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLManager.swift; sourceTree = "<group>"; };
+		01A83FEB1FC9D7FD00E85060 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +60,10 @@
 		01A83FC61FC9D67800E85060 /* SnackTrack */ = {
 			isa = PBXGroup;
 			children = (
-				01A83FE51FC9D6FC00E85060 /* MLManager.swift */,
+				01A83FC71FC9D67800E85060 /* AppDelegate.swift */,
+				01A83FE91FC9D7E300E85060 /* MLManager.swift */,
 				01A83FDF1FC9D6D100E85060 /* Models */,
 				01A83FDE1FC9D6CD00E85060 /* Views */,
-				01A83FC71FC9D67800E85060 /* AppDelegate.swift */,
 				01A83FDD1FC9D6C700E85060 /* Controllers */,
 				01A83FDC1FC9D6C000E85060 /* Support */,
 			);
@@ -93,7 +93,7 @@
 		01A83FDE1FC9D6CD00E85060 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				01A83FE31FC9D6F200E85060 /* Camera.swift */,
+				01A83FE71FC9D7C600E85060 /* Camera.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -108,7 +108,7 @@
 		01A83FE01FC9D6D800E85060 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				01A83FE11FC9D6E500E85060 /* Extensions.swift */,
+				01A83FEB1FC9D7FD00E85060 /* Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -184,12 +184,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01A83FE61FC9D6FD00E85060 /* MLManager.swift in Sources */,
+				01A83FEA1FC9D7E300E85060 /* MLManager.swift in Sources */,
+				01A83FEC1FC9D7FD00E85060 /* Extensions.swift in Sources */,
+				01A83FE81FC9D7C600E85060 /* Camera.swift in Sources */,
 				01A83FCA1FC9D67800E85060 /* CameraController.swift in Sources */,
-				01A83FE41FC9D6F200E85060 /* Camera.swift in Sources */,
 				01A83FD01FC9D67800E85060 /* SnackTrack.xcdatamodeld in Sources */,
 				01A83FC81FC9D67800E85060 /* AppDelegate.swift in Sources */,
-				01A83FE21FC9D6E500E85060 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
