@@ -8,11 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CameraController: UIViewController {
 
+    var camera: Camera?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.view.backgroundColor = UIColor.white
+        camera = Camera(frame: self.view.bounds)
+        self.view.addSubview(camera!)
     }
 
     override func didReceiveMemoryWarning() {
