@@ -17,6 +17,8 @@ class CameraController: UIViewController {
         self.view.backgroundColor = UIColor.white
         camera = Camera(frame: self.view.bounds)
         self.view.addSubview(camera!)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

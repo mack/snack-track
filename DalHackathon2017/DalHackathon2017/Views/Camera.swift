@@ -28,7 +28,7 @@ class Camera: UIView {
             session?.startRunning()
         } catch {
             // handle error
-            print("Error!")
+            fatalError("Failed to load camera: \(error)")
         }
     }
     
