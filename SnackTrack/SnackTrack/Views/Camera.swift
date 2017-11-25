@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-class Camera: UIView {
+class Camera: UIView, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     // preview
     private var session: AVCaptureSession?
@@ -36,7 +36,7 @@ class Camera: UIView {
         let label = UILabel(frame: .zero)
         label.textAlignment = .center
         label.textColor = UIColor.white
-        label.text = "Test"
+        label.text = "Banana"
         return label
     }()
     
@@ -46,12 +46,19 @@ class Camera: UIView {
         do {
             let input = try AVCaptureDeviceInput(device: device!)
             session = AVCaptureSession()
+            // added
+            session?.sessionPreset = .photo
+            // ---
             session?.addInput(input)
             preview = AVCaptureVideoPreviewLayer(session: session!)
             preview?.videoGravity = AVLayerVideoGravity.resizeAspectFill
             preview?.frame = self.layer.bounds
             self.layer.addSublayer(preview!)
             session?.startRunning()
+            let dataOutput = AVCaptureVideoDataOutput()
+            dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
+            session?.addOutput(dataOutput)
+            
         } catch {
             // handle error
             fatalError("Failed to load camera: \(error)")
@@ -62,13 +69,13 @@ class Camera: UIView {
     private func setupUI() {
         self.addSubview(captureBtn)
         self.addSubview(popupView)
-        self.addConstraintsWithFormat(format: "V:[v0(\(BUTTON_SIZE))]-16-|", views: captureBtn)
+        self.addConstraintsWithFormat(format: "V:[v0(\(BUTTON_SIZE))]-25-|", views: captureBtn)
         self.addConstraintsWithFormat(format: "H:[v0(\(BUTTON_SIZE))]", views: captureBtn)
         self.addConstraint(NSLayoutConstraint(item: captureBtn, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
-        self.addConstraintsWithFormat(format: "V:[v0(40)]-\(BUTTON_SIZE + 30)-|", views: popupView)
-        self.addConstraintsWithFormat(format: "H:|-25-[v0]-25-|", views: popupView)
+        self.addConstraintsWithFormat(format: "V:[v0(40)]-\(BUTTON_SIZE + 41)-|", views: popupView)
+        self.addConstraint(NSLayoutConstraint(item: popupView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
         popupView.addSubview(popupLabel)
-        popupView.addConstraintsWithFormat(format: "H:|[v0]|", views: popupLabel)
+        popupView.addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: popupLabel)
         popupView.addConstraintsWithFormat(format: "V:|[v0]|", views: popupLabel)
     }
     

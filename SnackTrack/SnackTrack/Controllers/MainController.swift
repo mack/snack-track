@@ -14,16 +14,15 @@ class MainController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.collectionView?.backgroundColor = UIColor.red
-        self.collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellView")
-        self.collectionView?.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
-        
         navigationItem.title = "Camera"
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.backgroundColor = UIColor.clear
         
+        self.collectionView?.backgroundColor = UIColor.white
+        self.collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellView")
+        self.collectionView?.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+
         setupCollectionView()
     }
     
@@ -33,19 +32,40 @@ class MainController: UICollectionViewController, UICollectionViewDelegateFlowLa
             layout.minimumLineSpacing = 0
         }
         self.collectionView?.isPagingEnabled = true
-        self.collectionView?.contentInset = UIEdgeInsetsMake(-65, 0, 0, 0)
+        self.collectionView?.bounces = false
+        self.collectionView?.showsHorizontalScrollIndicator = false
+        self.collectionView?.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0)
     }
     
+    private func setupCamera() {
+        
+    }
+    
+    private func setupHistory() {
+        
+    }
+
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellView", for: indexPath)
         if (indexPath.row == 0) {
+            setupCamera()
             camera = Camera(frame: cell.bounds)
             cell.addSubview(camera!)
+        } else {
+            setupHistory()
+            cell.addSubview(History(frame: cell.bounds))
         }
-        cell.backgroundColor = UIColor.blue
         return cell
     }
     
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.x
+        if (offset >= self.view.frame.width) {
+            navigationItem.title = "Overview"
+        } else {
+            navigationItem.title = "Camera"
+        }
+    }
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print(3)
         return 2
