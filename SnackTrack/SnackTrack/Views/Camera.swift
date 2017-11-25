@@ -56,7 +56,7 @@ class Camera: UIView, AVCaptureVideoDataOutputSampleBufferDelegate {
             self.layer.addSublayer(preview!)
             session?.startRunning()
             let dataOutput = AVCaptureVideoDataOutput()
-            dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
+            dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue.main)
             session?.addOutput(dataOutput)
             
         } catch {
@@ -64,6 +64,15 @@ class Camera: UIView, AVCaptureVideoDataOutputSampleBufferDelegate {
             fatalError("Failed to load camera: \(error)")
         }
         setupUI()
+    }
+    
+    func captureOutput(_ output: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        print(123)
+        guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { print("erroro"); return }
+        MLManager.shared.classify(buffer: pixelBuffer) { (res) in
+            print(res)
+        }
+        
     }
     
     private func setupUI() {

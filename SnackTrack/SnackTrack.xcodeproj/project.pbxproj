@@ -17,6 +17,7 @@
 		01A83FEC1FC9D7FD00E85060 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A83FEB1FC9D7FD00E85060 /* Extensions.swift */; };
 		01A83FEE1FC9E45500E85060 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A83FED1FC9E45500E85060 /* History.swift */; };
 		01A83FF01FC9E97000E85060 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A83FEF1FC9E97000E85060 /* HistoryCell.swift */; };
+		01A83FF21FC9F40700E85060 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 01A83FF11FC9F40700E85060 /* MobileNet.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		01A83FEB1FC9D7FD00E85060 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		01A83FED1FC9E45500E85060 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		01A83FEF1FC9E97000E85060 /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		01A83FF11FC9F40700E85060 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				01A83FC71FC9D67800E85060 /* AppDelegate.swift */,
 				01A83FE91FC9D7E300E85060 /* MLManager.swift */,
+				01A83FF11FC9F40700E85060 /* MobileNet.mlmodel */,
 				01A83FDF1FC9D6D100E85060 /* Models */,
 				01A83FDE1FC9D6CD00E85060 /* Views */,
 				01A83FDD1FC9D6C700E85060 /* Controllers */,
@@ -97,8 +100,8 @@
 		01A83FDE1FC9D6CD00E85060 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				01A83FE71FC9D7C600E85060 /* Camera.swift */,
 				01A83FED1FC9E45500E85060 /* History.swift */,
+				01A83FE71FC9D7C600E85060 /* Camera.swift */,
 				01A83FEF1FC9E97000E85060 /* HistoryCell.swift */,
 			);
 			path = Views;
@@ -192,6 +195,7 @@
 			files = (
 				01A83FEA1FC9D7E300E85060 /* MLManager.swift in Sources */,
 				01A83FEC1FC9D7FD00E85060 /* Extensions.swift in Sources */,
+				01A83FF21FC9F40700E85060 /* MobileNet.mlmodel in Sources */,
 				01A83FEE1FC9E45500E85060 /* History.swift in Sources */,
 				01A83FE81FC9D7C600E85060 /* Camera.swift in Sources */,
 				01A83FCA1FC9D67800E85060 /* MainController.swift in Sources */,
