@@ -18,10 +18,10 @@ class MLManager: NSObject {
         do {
             let model = try VNCoreMLModel(for: MobileNet().model)
             let request = VNCoreMLRequest(model: model) { (req, err) in
-                if let err = err {
+                if let _ = err {
                     return
                 }
-                completion(req.results as! [String])
+                print(req.results?.first)
             }
             try VNImageRequestHandler(cvPixelBuffer: buffer, options: [:]).perform([request])
         } catch {

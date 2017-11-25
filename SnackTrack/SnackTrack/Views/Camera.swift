@@ -66,14 +66,15 @@ class Camera: UIView, AVCaptureVideoDataOutputSampleBufferDelegate {
         setupUI()
     }
     
-    func captureOutput(_ output: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         print(123)
-        guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { print("erroro"); return }
+        let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)!
         MLManager.shared.classify(buffer: pixelBuffer) { (res) in
             print(res)
         }
         
     }
+    
     
     private func setupUI() {
         self.addSubview(captureBtn)
