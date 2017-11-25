@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01069F371FC9B70B00DA9B98 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01069F361FC9B70B00DA9B98 /* Extensions.swift */; };
+		01069F391FC9B84200DA9B98 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01069F381FC9B84200DA9B98 /* Camera.swift */; };
+		01069F3B1FC9BDC300DA9B98 /* MLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01069F3A1FC9BDC300DA9B98 /* MLManager.swift */; };
+		01069F3E1FC9C0D000DA9B98 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 01069F3D1FC9C0CF00DA9B98 /* MobileNet.mlmodel */; };
 		012028001FC91C87000D50C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012027FF1FC91C87000D50C2 /* AppDelegate.swift */; };
-		012028021FC91C87000D50C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012028011FC91C87000D50C2 /* ViewController.swift */; };
+		012028021FC91C87000D50C2 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012028011FC91C87000D50C2 /* CameraController.swift */; };
 		012028081FC91C87000D50C2 /* DalHackathon2017.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 012028061FC91C87000D50C2 /* DalHackathon2017.xcdatamodeld */; };
 		0120280A1FC91C87000D50C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 012028091FC91C87000D50C2 /* Assets.xcassets */; };
 		0120280D1FC91C87000D50C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0120280B1FC91C87000D50C2 /* LaunchScreen.storyboard */; };
@@ -34,9 +38,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01069F361FC9B70B00DA9B98 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		01069F381FC9B84200DA9B98 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		01069F3A1FC9BDC300DA9B98 /* MLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLManager.swift; sourceTree = "<group>"; };
+		01069F3D1FC9C0CF00DA9B98 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 		012027FC1FC91C87000D50C2 /* DalHackathon2017.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DalHackathon2017.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		012027FF1FC91C87000D50C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		012028011FC91C87000D50C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		012028011FC91C87000D50C2 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		012028071FC91C87000D50C2 /* DalHackathon2017.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DalHackathon2017.xcdatamodel; sourceTree = "<group>"; };
 		012028091FC91C87000D50C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0120280C1FC91C87000D50C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01069F3C1FC9C05500DA9B98 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				01069F3A1FC9BDC300DA9B98 /* MLManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		012027F31FC91C87000D50C2 = {
 			isa = PBXGroup;
 			children = (
@@ -97,8 +113,8 @@
 		012027FE1FC91C87000D50C2 /* DalHackathon2017 */ = {
 			isa = PBXGroup;
 			children = (
+				01069F3C1FC9C05500DA9B98 /* Managers */,
 				012028341FC91CEE000D50C2 /* Views */,
-				012028331FC91CE9000D50C2 /* Extensions */,
 				012028321FC91CE4000D50C2 /* Model */,
 				012028311FC91CD9000D50C2 /* Controllers */,
 				012028301FC91CCD000D50C2 /* Support */,
@@ -127,6 +143,8 @@
 		012028301FC91CCD000D50C2 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				01069F3D1FC9C0CF00DA9B98 /* MobileNet.mlmodel */,
+				012028331FC91CE9000D50C2 /* Extensions */,
 				012027FF1FC91C87000D50C2 /* AppDelegate.swift */,
 				012028091FC91C87000D50C2 /* Assets.xcassets */,
 				0120280B1FC91C87000D50C2 /* LaunchScreen.storyboard */,
@@ -139,7 +157,7 @@
 		012028311FC91CD9000D50C2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				012028011FC91C87000D50C2 /* ViewController.swift */,
+				012028011FC91C87000D50C2 /* CameraController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -154,6 +172,7 @@
 		012028331FC91CE9000D50C2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				01069F361FC9B70B00DA9B98 /* Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -161,6 +180,7 @@
 		012028341FC91CEE000D50C2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				01069F381FC9B84200DA9B98 /* Camera.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -298,9 +318,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				012028021FC91C87000D50C2 /* ViewController.swift in Sources */,
+				01069F3B1FC9BDC300DA9B98 /* MLManager.swift in Sources */,
+				012028021FC91C87000D50C2 /* CameraController.swift in Sources */,
+				01069F391FC9B84200DA9B98 /* Camera.swift in Sources */,
 				012028001FC91C87000D50C2 /* AppDelegate.swift in Sources */,
+				01069F3E1FC9C0D000DA9B98 /* MobileNet.mlmodel in Sources */,
 				012028081FC91C87000D50C2 /* DalHackathon2017.xcdatamodeld in Sources */,
+				01069F371FC9B70B00DA9B98 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +483,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+<<<<<<< HEAD
+=======
+				DEVELOPMENT_TEAM = Z66795U7M4;
+>>>>>>> 142160766b90b0731bda5ea32a75563d824fc091
 				INFOPLIST_FILE = DalHackathon2017/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mackboudreau.DalHackathon2017;
@@ -473,6 +501,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+<<<<<<< HEAD
+=======
+				DEVELOPMENT_TEAM = Z66795U7M4;
+>>>>>>> 142160766b90b0731bda5ea32a75563d824fc091
 				INFOPLIST_FILE = DalHackathon2017/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mackboudreau.DalHackathon2017;
