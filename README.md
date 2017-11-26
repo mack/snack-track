@@ -33,5 +33,8 @@ Surprissingly, our biggest issue was... github. I've been using this platform fr
 ## The Outcome
 There were 3 categories to win... Most Humorous, Most Social, and Most Complete. The winners were chosen by all the other teams. We ended up winning "Most Complete", which was great!
 
+#### Here was our "finished" product by the end of the day
+<p align="center"><img src="https://i.imgur.com/OAU9Eox.jpg" height="400px"></img><img src="https://i.imgur.com/KySX6mJ.png" height="400px"></img></p>
+
 ## Future
 If we were to take this app further, we would definitally hook it up to an API so we can cover more food. As well as train our own model that only detects various foods (MobileNet wasn't specifically designed for food). Finally, we believe that experimenting with depth-sensor cameras may prove better results, not only for classification, but also predicting the portion size of the food to get a more accurate calorie reading. 
