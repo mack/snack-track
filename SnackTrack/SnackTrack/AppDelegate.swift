@@ -21,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         UINavigationBar.appearance().layer.shadowRadius = 0
-        UIApplication.shared.statusBarStyle = .lightContent
+        
+        UINavigationBar.appearance().tintColor = UIColor.black
         
         return true
     }

@@ -11,18 +11,29 @@ import UIKit
 class MainController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var camera: Camera?
+    @objc func handleSettings() {
+        
+    }
+    
+    @objc func handleGraph() {
+        let path = IndexPath(row: 1, section: 0)
+        self.collectionView?.scrollToItem(at: path, at: .right, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Camera"
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//        self.navigationController?.navigationBar.shadowImage = UIImage()
+//        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
         
         self.collectionView?.backgroundColor = UIColor.white
         self.collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellView")
         self.collectionView?.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
-
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_settings"), style: .plain, target: self, action: #selector(handleSettings))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "graph"), style: .plain, target: self, action: #selector(handleGraph))
+        
         setupCollectionView()
     }
     
@@ -34,7 +45,7 @@ class MainController: UICollectionViewController, UICollectionViewDelegateFlowLa
         self.collectionView?.isPagingEnabled = true
         self.collectionView?.bounces = false
         self.collectionView?.showsHorizontalScrollIndicator = false
-        self.collectionView?.contentInset = UIEdgeInsetsMake(-64, 0, 0, 0)
+        self.collectionView?.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
     }
     
     private func setupCamera() {

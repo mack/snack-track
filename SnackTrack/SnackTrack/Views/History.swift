@@ -8,18 +8,48 @@
 
 import UIKit
 
+class HistoryItem: NSObject {
+    var item: String?
+    var photo: UIImage?
+    var cal: String?
+}
+
 class History: UIView, UITableViewDelegate, UITableViewDataSource {
+    var items: [HistoryItem] = {
+        var item1 = HistoryItem()
+        item1.item = "Pizza"
+        item1.cal = "250"
+        item1.photo = UIImage(named: "Pizza")
+        
+        var item2 = HistoryItem()
+        item2.item = "Salad"
+        item2.cal = "152"
+        item2.photo = UIImage(named: "Salad")
+        
+        var item3 = HistoryItem()
+        item3.item = "Buritto"
+        item3.cal = "206"
+        item3.photo = UIImage(named: "Buritto")
+        
+        var item4 = HistoryItem()
+        item4.item = "Pasta"
+        item4.cal = "145"
+        item4.photo = UIImage(named: "Pasta")
+        
+        return [item1, item2, item3, item4]
+    }()
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 90
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! HistoryCell
+        cell.item = items[indexPath.row]
         return cell
     }
     
@@ -27,8 +57,10 @@ class History: UIView, UITableViewDelegate, UITableViewDataSource {
         let tableView = UITableView(frame: .zero)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.allowsSelection = false
         tableView.separatorColor = UIColor.clear
-        tableView.backgroundColor = UIColor.blue
+        tableView.backgroundColor = UIColor.clear
+        tableView.tableHeaderView = HistoryHeader(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 200))
         return tableView
     }()
     
@@ -39,8 +71,8 @@ class History: UIView, UITableViewDelegate, UITableViewDataSource {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addSubview(historyTable)
-        self.addConstraintsWithFormat(format: "V:[v0(400)]|", views: historyTable)
-        self.addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: historyTable)
+        self.addConstraintsWithFormat(format: "V:|[v0]|", views: historyTable)
+        self.addConstraintsWithFormat(format: "H:|[v0]|", views: historyTable)
         self.backgroundColor = UIColor.rgb(red: 247, green: 250, blue: 254)
         setupTableView()
         // r - 52 g - 219 b - 159

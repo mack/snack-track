@@ -16,12 +16,27 @@ class Camera: UIView, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     private let BUTTON_SIZE: CGFloat = 80
     
+    private var popupLauncher: PopupLauncher?
+    
+    @objc func addPopup() {
+        
+        popupLauncher?.showSettings()
+
+    }
+    
     lazy var captureBtn: UIButton = {
         let btn = UIButton()
         btn.layer.cornerRadius = BUTTON_SIZE / 2.0
         btn.backgroundColor = UIColor(white: 0, alpha: 0.70)
         btn.layer.borderWidth = 1
+        btn.addTarget(self, action: #selector(addPopup), for: UIControlEvents.touchUpInside)
         btn.layer.borderColor = UIColor.white.cgColor
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "ic_control_point")
+        imageView.contentMode = .center
+        btn.addSubview(imageView)
+        btn.addConstraintsWithFormat(format: "H:|[v0]|", views: imageView)
+        btn.addConstraintsWithFormat(format: "V:|[v0]|", views: imageView)
         return btn
     }()
     
@@ -42,6 +57,7 @@ class Camera: UIView, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        popupLauncher = PopupLauncher()
         let device = AVCaptureDevice.default(for: AVMediaType.video)
         do {
             let input = try AVCaptureDeviceInput(device: device!)
@@ -66,15 +82,30 @@ class Camera: UIView, AVCaptureVideoDataOutputSampleBufferDelegate {
         setupUI()
     }
     
+    var date: Date = Date()
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        print(123)
-        let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)!
-        MLManager.shared.classify(buffer: pixelBuffer) { (res) in
-            print(res)
+        if (date.timeIntervalSinceNow < -1) {
+            let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)!
+            DispatchQueue.global(qos: .background).async { // 1
+                MLManager.shared.classify(buffer: pixelBuffer) { (res) in
+                    DispatchQueue.main.async { // 2
+                        if let val = SimulatedDatabase.foodDatabase[res.lowercased()] {
+                            self.popupLabel.alpha = 1
+                        } else {
+                            self.popupLabel.alpha = 0.4
+                        }
+                        if (res == "packet") {
+                            self.popupLabel.text = "Bag of food"
+                        } else {
+                            self.popupLabel.text = res
+                        }
+                        
+                    }
+                }
+            }
+            date = Date()
         }
-        
     }
-    
     
     private func setupUI() {
         self.addSubview(captureBtn)

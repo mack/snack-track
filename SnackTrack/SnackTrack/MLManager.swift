@@ -14,14 +14,16 @@ import ImageIO
 class MLManager: NSObject {
     static var shared = MLManager()
     
-    func classify(buffer: CVPixelBuffer, completion: @escaping ([String]) -> ()) {
+    func classify(buffer: CVPixelBuffer, completion: @escaping (String) -> ()) {
         do {
             let model = try VNCoreMLModel(for: MobileNet().model)
             let request = VNCoreMLRequest(model: model) { (req, err) in
                 if let _ = err {
                     return
                 }
-                print(req.results?.first)
+                if let result = req.results?.first as? VNClassificationObservation {
+                    completion(result.identifier)
+                }
             }
             try VNImageRequestHandler(cvPixelBuffer: buffer, options: [:]).perform([request])
         } catch {
