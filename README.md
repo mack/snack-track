@@ -1,4 +1,4 @@
-# DalhousieHackathon2017
+# DalhousieHackathon2017 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 A Dalhousie & ShiftKey Labs hosted Hackathon, which took place on Nov. 25th 2017. The hackathon was limited to first and second year undergraduates and ran from 10am until 8pm. Our team consisted of only [myself](https://github.com/mackboudreau) and [@sterrio](https://github.com/sterrio).
 
 ## Brainstorming
