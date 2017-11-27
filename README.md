@@ -2,8 +2,8 @@
 A Dalhousie & ShiftKey Labs hosted Hackathon, which took place on Nov. 25th 2017. The hackathon was limited to first and second year undergraduates and ran from 10am until 8pm. Our team consisted of only [myself](https://github.com/mackboudreau) and [@sterrio](https://github.com/sterrio).
 
 ## Brainstorming
-To start off this hackathon, we brainstormed problems everyone had and corresponding solutions. After coming up with various ideas, we choose an app that helps people stay healthy.
-We choose this because we feel that this is a problem that impacts almost everyone. It’s extremely challenging to eat healthy all the time, and it’s even harder when you don’t know exactly how many calories you should be intaking daily.  
+To start off this hackathon, we brainstormed problems that everyone had and corresponding solutions. After coming up with various ideas, we chose an app that helped people stay healthy.
+We chose this because we feel that this is a problem that impacts almost everyone. It’s extremely challenging to eat healthy all the time, and it’s even harder when you don’t know exactly how many calories you should be intaking.  
 
 So what exactly was our solution? An app that tracks calories easily... that “easily” part was very important to us, because we know that there are already lots of excellent solutions out there to track your calories/nutrition information. 
 
